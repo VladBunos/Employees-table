@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="HW-table.css">
+</head>
+<body>
+
+    
+
+<form action="" id="emp-table-form"> 
+    <label>
+        <input type="text" id="emp-name" placeholder="Имя"/>
+    </label>
+    <label>
+        <input type="text" id="emp-bday" placeholder="Год рождения"/>
+    </label>
+    <label>
+        <input type="date" id="emp-jday" placeholder="Дата приема на работу"/>
+    </label>
+    <label>
+        <input type="text" id="emp-sal" placeholder="Заработная плата"/>
+    </label>
+    <br><br>
+      <button id="emp-add" type="submit">Добавить сотрудника</button>
+</form>
+
+<br><br>
+
+<div id="emp-table-info">
+<p id="emp-num">Количество сотрудников: <span></span></p>
+<p id="emp-sal-all">Сумма заработной платы:</p>
+
+<table id="emp-table" >
+    <thead>
+        <tr>
+            <th>X</th> <th>ИМЯ</button></th> 
+            <th>ГОД РОЖДЕНИЯ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="emp-bday-descending-order-sort">↑</button><button id="emp-bday-increasing-order-sort">↓</button></th> 
+            <th> ДАТА ПРИЕМА НА РАБОТУ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="emp-jday-descending-order-sort">↑</button><button id="emp-jday-increasing-order-sort">↓</button></th> 
+            <th>ЗАРАБОТНАЯ ПЛАТА </th>
+        </tr>              
+    </thead>
+    <tbody id="emp-table-body">
+        <!-- <tr>
+            <td>${}</td>  <td>${}</td> <td>${}</td> <td>${}</td> <td>${}</td>   
+        </tr> -->
+    </tbody>
+</table>
+<br><br>
+<button id="emp-fire">УВОЛИТЬ</button> <button id="emp-sum-toshow">СУММА</button>
+<script src="./HW-table.js"></script>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+#emp-table-form{
+    text-align: center;
+}
+
+#emp-table-info{
+    position: relative;
+    left: 25%;
+}
+
+TABLE {
+    border-collapse: collapse; 
+    /* margin: 0 auto; */
+}
+TD, TH {
+    padding: 3px; 
+    border: 1px solid black; 
+}
+
+TH {
+    background: #96a5a7; /* Цвет фона */
+}
