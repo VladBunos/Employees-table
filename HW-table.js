@@ -1,22 +1,20 @@
 let data = [];
-let empName = document.querySelector('#emp-name');
-let empBDay = document.querySelector('#emp-bday');
-let empJDay = document.querySelector('#emp-jday');
-let empSal = document.querySelector('#emp-sal');
-let empNum = document.querySelector('#emp-num');
-let empSalAll = document.querySelector('#emp-sal-all');
-let empAdd = document.querySelector('#emp-add');
-let empTableForm = document.querySelector('#emp-table-form')
-let empTableBody = document.querySelector('#emp-table-body');
+const empName = document.querySelector('#emp-name');
+const empBDay = document.querySelector('#emp-bday');
+const empJDay = document.querySelector('#emp-jday');
+const empSal = document.querySelector('#emp-sal');
+const empNum = document.querySelector('#emp-num');
+const empSalAll = document.querySelector('#emp-sal-all');
+const empAdd = document.querySelector('#emp-add');
+const empTableForm = document.querySelector('#emp-table-form')
+const empTableBody = document.querySelector('#emp-table-body');
 let empId = -1;
-let empSumToShow = document.querySelector('#emp-sum-toshow');
-let empFireButton = document.querySelector('#emp-fire')
-let empBdayDOSButton = document.querySelector('#emp-bday-descending-order-sort');
-let empBdayIOSButton = document.querySelector('#emp-bday-increasing-order-sort');
-let empJdayDOSButton = document.querySelector('#emp-jday-descending-order-sort');
-let empJdayIOSButton = document.querySelector('#emp-jday-increasing-order-sort');
-
-
+const empSumToShow = document.querySelector('#emp-sum-toshow');
+const empFireButton = document.querySelector('#emp-fire')
+const empBdayDOSButton = document.querySelector('#emp-bday-descending-order-sort');
+const empBdayIOSButton = document.querySelector('#emp-bday-increasing-order-sort');
+const empJdayDOSButton = document.querySelector('#emp-jday-descending-order-sort');
+const empJdayIOSButton = document.querySelector('#emp-jday-increasing-order-sort');
 
 
 function addData(empName, empBDay, empJDay, empSal){
@@ -96,8 +94,7 @@ empAdd.addEventListener('click', (event) => {
     empTableForm.reset()
 })
 
-empSumToShow.addEventListener('click', (event) =>{
-    event.preventDefault();
+empSumToShow.addEventListener('click', () =>{
     let salaryAll = 0;
     data.forEach(arrayElement =>{
         salaryAll = salaryAll + +arrayElement.salary
@@ -105,33 +102,28 @@ empSumToShow.addEventListener('click', (event) =>{
     empSalAll.innerHTML=`<p id="emp-sal-all">Сумма заработной платы: <span>${salaryAll}</span></p>`
 })
 
-empBdayDOSButton.addEventListener('click', (event) =>{
-    event.preventDefault();
+empBdayDOSButton.addEventListener('click', () =>{
     empBDaySort(true);
     createTable()
 })
 
-empBdayIOSButton.addEventListener('click', (event) =>{
-    event.preventDefault();
+empBdayIOSButton.addEventListener('click', () =>{
     empBDaySort(false)
     createTable()
 })
 
 
-empJdayDOSButton.addEventListener('click', (event) =>{
-    event.preventDefault();
+empJdayDOSButton.addEventListener('click', () =>{
     empJDaySort(true);
     createTable()
 })
 
-empJdayIOSButton.addEventListener('click', (event) =>{
-    event.preventDefault();
+empJdayIOSButton.addEventListener('click', () =>{
     empJDaySort(false)
     createTable()
 })
 
-empFireButton.addEventListener('click', (event) =>{
-    event.preventDefault();
+empFireButton.addEventListener('click', () =>{
     empFireChecked()
     createTable();
 })
