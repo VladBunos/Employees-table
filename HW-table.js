@@ -19,17 +19,6 @@ let empJdayIOSButton = document.querySelector('#emp-jday-increasing-order-sort')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function addData(empName, empBDay, empJDay, empSal){
     data.push({id: uniqueId(), name: empName, bday: empBDay, jday: empJDay, salary: empSal})
 }
@@ -90,11 +79,13 @@ function empJDaySort(descending){
     
 }
 
-
-
-
-
-
+function empFireChecked(){
+    let checkedCheckboxArray = [...document.querySelectorAll('input[type=checkbox]:checked')]
+    checkedCheckboxArray.forEach(arrayElement =>{
+        let elementToDelete = data.findIndex(item => item.id === +arrayElement.id);
+        data.splice([elementToDelete], 1)
+    })
+}
 
 
 
@@ -142,53 +133,64 @@ empJdayIOSButton.addEventListener('click', (event) =>{
 empFireButton.addEventListener('click', (event) =>{
     event.preventDefault();
     empFireChecked()
-    
-
+    createTable();
 })
 
-function empFireChecked(){
-    // let uncheckedCheckboxArray = ([...document.querySelectorAll('input[type=checkbox]')]).filter(arrayElement => arrayElement.checked === false);
-    // console.log(checkedCheckboxArray)
-    // uncheckedCheckboxArray.forEach(arrayElement =>{
-    // })
+
+
+
+
+
+
+
+
+
+
+
+
+// function empFireChecked(){
+//     // let uncheckedCheckboxArray = ([...document.querySelectorAll('input[type=checkbox]')]).filter(arrayElement => arrayElement.checked === false);
+//     // console.log(checkedCheckboxArray)
+//     // uncheckedCheckboxArray.forEach(arrayElement =>{
+//     // })
     
-    let checkedCheckboxArray = [...document.querySelectorAll('input[type=checkbox]:checked')]
-    checkedCheckboxArray.forEach(arrayElement =>{
-        let elementToDelete = data.findIndex(item => item.id === +arrayElement.id);
-        data.splice([elementToDelete], 1)
-    })
-    createTable();
-
-    
-
-    // let valuesToDelete = [];
-    // checkedCheckboxArray.forEach(arrayElement =>{
-    //     for(let element of data){
-    //         if (+arrayElement.id === element.id){
-    //             // console.log('match !')
-    //             valuesToDelete.push(element.id)
-    //             valuesToDelete.sort((a,b)=>{
-    //                 return a - b
-    //             })
-    //             console.log(valuesToDelete)
-
-    //         }
-    //     }
-    // })
-
+//     let checkedCheckboxArray = [...document.querySelectorAll('input[type=checkbox]:checked')]
+//     checkedCheckboxArray.forEach(arrayElement =>{
+//         let elementToDelete = data.findIndex(item => item.id === +arrayElement.id);
+//         data.splice([elementToDelete], 1)
+//     })
+//     createTable();
 
     
 
+//     // let valuesToDelete = [];
+//     // checkedCheckboxArray.forEach(arrayElement =>{
+//     //     for(let element of data){
+//     //         if (+arrayElement.id === element.id){
+//     //             // console.log('match !')
+//     //             valuesToDelete.push(element.id)
+//     //             valuesToDelete.sort((a,b)=>{
+//     //                 return a - b
+//     //             })
+//     //             console.log(valuesToDelete)
+
+//     //         }
+//     //     }
+//     // })
+
+
+    
 
 
 
 
-    // let counter = 0;
-    // for (element of valuesToDelete){
-    //     if(element === data[counter].id){
-    //         data.splice([counter], 1)
-    //         console.log('deleted')
-    //     }
-    //     counter++
-    // }
-}
+
+//     // let counter = 0;
+//     // for (element of valuesToDelete){
+//     //     if(element === data[counter].id){
+//     //         data.splice([counter], 1)
+//     //         console.log('deleted')
+//     //     }
+//     //     counter++
+//     // }
+// }
